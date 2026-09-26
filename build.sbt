@@ -9,14 +9,14 @@ ThisBuild / developers := List(
 ThisBuild / tlCiReleaseBranches := Seq()
 val Scala213 = "2.13.18"
 
-ThisBuild / crossScalaVersions := Seq("2.12.18", Scala213, "3.3.0")
+ThisBuild / crossScalaVersions := Seq(Scala213, "3.3.8")
 ThisBuild / scalaVersion := Scala213
 
 ThisBuild / testFrameworks += new TestFramework("munit.Framework")
 
-val catsV = "2.9.0"
-val catsEffectV = "3.5.0"
-val munitCatsEffectV = "1.0.7"
+val catsV = "2.13.0"
+val catsEffectV = "3.7.1"
+val munitCatsEffectV = "2.2.1"
 
 
 // Projects
@@ -33,8 +33,8 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel"               %%% "cats-core"                  % catsV,
       "org.typelevel"               %%% "cats-effect"                % catsEffectV,
       "org.tpolecat"                %%% "natchez-core"               % "0.3.2",
-      "io.chrisdavenport"           %%% "fiberlocal"                 % "0.1.1",
-      "org.typelevel"               %%% "munit-cats-effect-3"        % munitCatsEffectV         % Test,
+      "io.chrisdavenport"           %%% "fiberlocal"                 % "0.3.0",
+      "org.typelevel"               %%% "munit-cats-effect"        % munitCatsEffectV         % Test,
 
     )
   ).jsSettings(
